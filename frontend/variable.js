@@ -1,0 +1,1 @@
+export const IP_HOST='https://esport-influence-back.herokuapp.com' // change your IP here 
