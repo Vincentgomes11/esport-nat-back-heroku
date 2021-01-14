@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, AsyncStorage} from 'react-native';
-import {Card, ListItem, Button, Icon} from 'react-native-elements'
+import {Card, ListItem, Button, Icon, Image} from 'react-native-elements'
 import {connect} from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import {BasicButton} from '@phomea/react-native-buttons';
@@ -10,10 +10,12 @@ function CampaignListComponent(props) {
 
     return (
 
-<Card>
-  <Card.Title>{props.campaignName}
+<Card containerStyle={{backgroundColor: '#721B81'}} >
+  <Card.Title style={styles.secondtitle}
+>{props.campaignName}
 </Card.Title>
-    <Text style={{marginBottom: 10}}>
+<Card.Image source={props.campaignImg}></Card.Image>
+  <Text style={styles.textinput}>
     {props.campaignDesc}
     </Text>
     <BasicButton
@@ -27,6 +29,29 @@ function CampaignListComponent(props) {
 
     )
 }
+
+const styles = StyleSheet.create({
+  secondtitle: {
+    fontSize: 20,
+    color: '#fff',
+    paddingBottom: 10,
+    marginBottom: 2,
+    borderBottomColor: '#199187',
+    borderBottomWidth: 1,
+    textAlign: "center",
+    marginTop: 10, 
+    
+  },
+
+  textinput: {
+    margin : 10,
+    alignSelf: 'stretch',
+    color: '#fff',
+   
+
+},
+  
+});
 function mapDispatchToProps(dispatch){
     return {
         onSubmitCampaign: function(campaignSelected){

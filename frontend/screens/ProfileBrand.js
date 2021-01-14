@@ -34,21 +34,23 @@ function ProfileBrand({ takeToken, navigation }) {
                       <Divider />
                       <Menu.Item onPress={() => navigation.navigate('MyCampaigns')} title="My Campaigns" />
                     </Menu>
-                    <View style={styles.regform}>       
+                    <View style={styles.regform}>  
+                    <Text style={styles.header}>Profile</Text>
+     
                              <ScrollView>
-        <Card>
-          <Card.Title>{companyDetails.company}
+        <Card containerStyle={{backgroundColor: '#721B81'} }>
+          <Card.Title style={styles.secondtitle}>{companyDetails.company}
         </Card.Title>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {companyDetails.bio}
             </Text>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {companyDetails.firstName}</Text>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {companyDetails.lastName}</Text>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {companyDetails.phone}</Text>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {companyDetails.email}</Text>
         </Card>
         </ScrollView>
@@ -74,27 +76,23 @@ function ProfileBrand({ takeToken, navigation }) {
               textAlign: "center",
               marginTop: 50, 
           },
+         
+          secondtitle: {
+            fontSize: 20,
+            color: '#fff',
+            paddingBottom: 30,
+            marginBottom: 10,
+            borderBottomColor: '#199187',
+            borderBottomWidth: 1,
+            textAlign: "center",
+            marginTop: 10, 
+            
+          },
           textinput: {
-              alignSelf: 'stretch',
-              height: 40,
-              marginBottom: 30,
-              color: '#fff',
-              borderBottomColor: '#f8f8f8',
-              borderBottomWidth: 1,
-              marginLeft:10
-      
-          },
-          button: {
-              alignSelf: 'stretch',
-              alignItems: 'center',
-              padding: 20,
-              backgroundColor: '#59cbbd',
-              marginTop: 30,
-          },
-          btntext: {
-              color: '#fff',
-              fontWeight: 'bold'
-          }
+            margin : 10,
+            alignSelf: 'stretch',
+            color: '#fff',
+        },
       });
 
         function mapStateToProps(state) {

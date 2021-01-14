@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
       alignSelf: 'stretch',
       height: 40,
       marginBottom: 30,
+      color: '#fff',
       borderBottomColor: '#f8f8f8',
       borderBottomWidth: 1,
       marginLeft:10

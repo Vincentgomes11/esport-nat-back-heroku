@@ -12,23 +12,11 @@ import {IP_HOST} from '../variable'
 
 export default function HomeScreen({ navigation }) {
 
-  const [visible, setVisible] = React.useState(false);
-  const openMenu = () => setVisible(true);
-  const closeMenu = () => setVisible(false);
+
 
   return (
     <Provider>
      
-     <Menu    
-          visible={visible}
-          onDismiss={closeMenu}
-          anchor={<Button  style={styles.menuh} onPress={openMenu} title="Menu">Show menu</Button>}>
-          <Menu.Item onPress={() => navigation.navigate('SignIn')} title="Item 1" />
-          <Menu.Item onPress={() => {}} title="Item 2" />
-          <Divider />
-          <Menu.Item onPress={() => {}} title="Item 3" />
-        </Menu>
-        
     <View style={styles.regform}>
     
       <Text style={styles.header}>Welcome on Esport-Influence App</Text>

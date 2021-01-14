@@ -54,18 +54,17 @@ function CampaignDetail({takeToken, navigation}) {
              <Menu.Item onPress={() => navigation.navigate('HomeScreen')} title="Home" />
            </Menu>
         <View style={styles.regform}>
-<Card>
-  <Card.Title>{campaignDetails.campaignName}
+<Card containerStyle={{backgroundColor: '#721B81', height:'90%'} }>
+  <Card.Title style={styles.secondtitle}>{campaignDetails.campaignName}
 </Card.Title>
   <Card.Divider/>
-    <Text style={{marginBottom: 10}}>
+  <Card.Image source={campaignDetails.campaignImg}></Card.Image>
+    <Text style={styles.textinput}>
     {campaignDetails.description}
    </Text>
     <BasicButton
-      icon={<Icon name='code' color='#ffffff' />}
-      buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+      icon={<Icon name='code' color='#ffffff'/>}
       onPress={() => applyCampaign()}
-
       title='Apply' />
 </Card>
 </View>
@@ -82,40 +81,24 @@ const styles = StyleSheet.create({
       height: '95%',
 
     },
-    header: {
-        fontSize: 24,
-        color: '#fff',
-        paddingBottom: 10,
-        marginBottom: 40,
-        borderBottomColor: '#199187',
-        borderBottomWidth: 1,
-         marginTop: 50, 
-         width: '95%', 
-         marginLeft: 10,
-         textAlign: "center"
-
+   
+    secondtitle: {
+      fontSize: 20,
+      color: '#fff',
+      paddingBottom: 30,
+      marginBottom: 10,
+      borderBottomColor: '#199187',
+      borderBottomWidth: 1,
+      textAlign: "center",
+      marginTop: 30, 
+      
     },
     textinput: {
-        alignSelf: 'stretch',
-        height: 40,
-        marginBottom: 30,
-        color: '#fff',
-        borderBottomColor: '#f8f8f8',
-        borderBottomWidth: 1,
-        marginLeft:10
-
-    },
-    button: {
-        alignSelf: 'stretch',
-        alignItems: 'center',
-        padding: 20,
-        backgroundColor: '#59cbbd',
-        marginTop: 30,
-    },
-    btntext: {
-        color: '#fff',
-        fontWeight: 'bold'
-    }
+      margin : 30,
+      alignSelf: 'stretch',
+      color: '#fff',
+  },
+  
 });
 
 function mapStateToProps(state) {

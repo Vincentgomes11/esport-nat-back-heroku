@@ -40,18 +40,18 @@ function ProfileInfluencer({ takeToken, navigation }) {
 
         <ScrollView>
 
-        <Card>
-          <Card.Title>{influencerDetails.firstName}
+        <Card containerStyle={{backgroundColor: '#721B81'} }>
+          <Card.Title style={styles.secondtitle}>{influencerDetails.firstName}
         </Card.Title>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {influencerDetails.lastName}
             </Text>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {influencerDetails.phone}
             </Text>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {influencerDetails.email}</Text>
-            <Text style={{marginBottom: 10}}>
+            <Text style={styles.textinput}>
             {influencerDetails.favoriteGame}</Text>
         </Card>
         </ScrollView>
@@ -77,16 +77,22 @@ function ProfileInfluencer({ takeToken, navigation }) {
                 textAlign: "center",
                 marginTop: 50, 
             },
-            textinput: {
-                alignSelf: 'stretch',
-                height: 40,
-                marginBottom: 30,
-                color: '#fff',
-                borderBottomColor: '#f8f8f8',
-                borderBottomWidth: 1,
-                marginLeft:10
-        
+            secondtitle: {
+              fontSize: 20,
+              color: '#fff',
+              paddingBottom: 30,
+              marginBottom: 10,
+              borderBottomColor: '#199187',
+              borderBottomWidth: 1,
+              textAlign: "center",
+              marginTop: 10, 
+              
             },
+            textinput: {
+              margin : 10,
+              alignSelf: 'stretch',
+              color: '#fff',
+          },
           
         });
         function mapStateToProps(state) {

@@ -53,10 +53,13 @@ function MyRequests({ takeToken, navigation }) {
                  <Menu.Item onPress={() => navigation.navigate('HomeScreen')} title="Home" />
                </Menu>
             <View style={styles.regform}>
+            <ScrollView>
+
                       <Text style={styles.header}>My last requests</Text>
 
                 <ScrollView>
                     {returnRequestList}
+                </ScrollView>
                 </ScrollView>
 
             </View>
@@ -68,8 +71,8 @@ function MyRequests({ takeToken, navigation }) {
 
             <View style={styles.regform}>
 
-            <Card>
-            <Card.Title>Campaigns Section
+            <Card containerStyle={{backgroundColor: '#721B81', height:'40'} }>
+            <Card.Title style={styles.secondtitle}>Campaigns Section
           </Card.Title>
               <Text style={{marginBottom: 10}}> No Request</Text>
               
@@ -87,9 +90,10 @@ function MyRequests({ takeToken, navigation }) {
 
 const styles = StyleSheet.create({
     regform: {
-        alignSelf: 'stretch',
-        backgroundColor: '#9C27B0',
-        height: '95%',
+      alignSelf: 'stretch',
+      backgroundColor: '#9C27B0',
+      height: '95%',
+
     },
     header: {
         fontSize: 24,
@@ -97,27 +101,31 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         marginBottom: 40,
         borderBottomColor: '#199187',
-        borderBottomWidth: 1
+        borderBottomWidth: 1,
+         marginTop: 50, 
+         width: '95%', 
+         marginLeft: 10,
+         textAlign: "center"
+  
+    },
+   
+    secondtitle: {
+      fontSize: 20,
+      color: '#fff',
+      paddingBottom: 10,
+      marginBottom: 10,
+      borderBottomColor: '#199187',
+      borderBottomWidth: 1,
+      textAlign: "center",
+      marginTop: 10, 
+      
     },
     textinput: {
-        alignSelf: 'stretch',
-        height: 40,
-        marginBottom: 30,
-        color: '#fff',
-        borderBottomColor: '#f8f8f8',
-        borderBottomWidth: 1
-    },
-    button: {
-        alignSelf: 'stretch',
-        alignItems: 'center',
-        padding: 20,
-        backgroundColor: '#59cbbd',
-        marginTop: 10,
-    },
-    btntext: {
-        color: '#fff',
-        fontWeight: 'bold'
-    }
+      margin : 10,
+      alignSelf: 'stretch',
+      color: '#fff',
+  },
+  
 });
 function mapStateToProps(state) {
     return { takeToken: state.token }

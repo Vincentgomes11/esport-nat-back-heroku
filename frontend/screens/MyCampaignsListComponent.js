@@ -9,13 +9,13 @@ function MyCampaignsListComponent(props) {
 
     return (
 
-<Card>
-  <Card.Title>{props.campaignName}
+<Card containerStyle={{backgroundColor: '#721B81'} }>
+  <Card.Title style={styles.secondtitle}>{props.campaignName}
 </Card.Title>
-    <Text style={{marginBottom: 10}}>
+    <Text style={styles.textinput}>
     Status: {props.campaignStatus}
     </Text>
-    <Text style={{marginBottom: 10}}>
+    <Text style={styles.textinput}>
     {props.campaignDesc}
     </Text>
    
@@ -23,4 +23,30 @@ function MyCampaignsListComponent(props) {
 
     )
 }
+const styles = StyleSheet.create({
+    regform: {
+      alignSelf: 'stretch',
+      backgroundColor: '#9C27B0',
+      height: '95%',
+
+    },
+   
+    secondtitle: {
+      fontSize: 20,
+      color: '#fff',
+      paddingBottom: 30,
+      marginBottom: 10,
+      borderBottomColor: '#199187',
+      borderBottomWidth: 1,
+      textAlign: "center",
+      marginTop: 10, 
+      
+    },
+    textinput: {
+      margin : 10,
+      alignSelf: 'stretch',
+      color: '#fff',
+  },
+  
+});
 export default MyCampaignsListComponent
