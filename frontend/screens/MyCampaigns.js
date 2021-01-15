@@ -86,10 +86,10 @@ function MyCampaigns({ takeToken, navigation }) {
                       <Menu.Item onPress={() => navigation.navigate('ProfileBrand')} title="Profile" />
                     </Menu>
                     <View style={styles.regform}>   
-            <Card>
-            <Card.Title>Campaigns Section
+            <Card containerStyle={{backgroundColor: '#721B81'} }>
+            <Card.Title style={styles.secondtitle}>Campaigns Section
           </Card.Title>
-              <Text style={{marginBottom: 10}}> No campaign</Text>
+              <Text style={styles.textinput}> No campaign</Text>
               
           </Card>
 

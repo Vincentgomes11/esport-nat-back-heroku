@@ -71,49 +71,47 @@ function ChoiceInfluencer({takeToken, navigation}) {
           anchor={<Button  style={styles.menuh} onPress={openMenu} title="Menu">Show menu</Button>}>
           <Menu.Item onPress={() => navigation.navigate('MyCampaigns')} title="My campaigns" />
           <Menu.Item onPress={() => navigation.navigate('CreateCampaign')} title="CreateCampaign" />
-          <Divider />
           <Menu.Item onPress={() => navigation.navigate('ProfileBrand')} title="Profile" />
         </Menu>
         <ScrollView>
         <View style={styles.regform}>
 
-<Card>
-  <Card.Title>{returnCampaignDetailList.campaignName}
+<Card containerStyle={{backgroundColor: '#721B81', height:'90%'} }> 
+  <Card.Title style={styles.secondtitle}>{returnCampaignDetailList.campaignName}
 </Card.Title>
   <Card.Divider/>
-  {/* <Card.Image source={require('https://e.sport.fr/wp-content/uploads/2020/08/bigs-red-bull-flick-key-visual.jpeg')}> */}
-    <Text style={{marginBottom: 10}}>
+  <Card.Image source={returnInfluenceur.uploadedDOc}/>
+    <Text style={styles.textinput}>
     {returnInfluenceur.userName}
    </Text>
-   <Text style={{marginBottom: 10}}>
+   <Text style={styles.textinput}>
     Name: {returnInfluenceur.firstName}
    </Text>
-   <Text style={{marginBottom: 10}}>
+   <Text style={styles.textinput}>
    Bio: {returnInfluenceur.bio}
    </Text>
-   <Text style={{marginBottom: 10}}>
+   <Text style={styles.textinput}>
    Status: {returnCampaignDetailList.status}
    </Text>
-   <Text style={{marginBottom: 10}}>
-   Followers: {returnInfluenceur.numberFollower}
-   </Text>
+
+   <View style={styles.container}>
+     <View style={styles.buttonContainer}>
     <BasicButton
       icon={<Icon name='code' color='#ffffff' />}
-      buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
       onPress={() => updateStatusAcc()}
 
       title='Accept' />
+
         <BasicButton
       icon={<Icon name='code' color='#ffffff' />}
-      buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
       onPress={() => updateStatusRef()}
 
       title='Refuse' />
-       <Text style={{marginBottom: 10}}>
-       {returnInfluenceur.description}        
-   </Text>
+       </View>
+       </View>
 </Card>
 </View>
+
 </ScrollView>
 
     </Provider>
@@ -126,37 +124,36 @@ function ChoiceInfluencer({takeToken, navigation}) {
           visible={visible}
           onDismiss={closeMenu}
           anchor={<Button  style={styles.menuh} onPress={openMenu} title="Menu">Show menu</Button>}>
-          <Menu.Item onPress={() => navigation.navigate('SignIn')} title="Item 1" />
-          <Menu.Item onPress={() => {}} title="Item 2" />
-          <Divider />
-          <Menu.Item onPress={() => {}} title="Item 3" />
+          <Menu.Item onPress={() => navigation.navigate('MyCampaigns')} title="My campaigns" />
+          <Menu.Item onPress={() => navigation.navigate('CreateCampaign')} title="CreateCampaign" />
+          <Menu.Item onPress={() => navigation.navigate('ProfileBrand')} title="Profile" />
         </Menu>
         <ScrollView>
         <View style={styles.regform}>
 
 
-<Card>
-  <Card.Title>{returnCampaignDetailList.campaignName}
+<Card containerStyle={{backgroundColor: '#721B81', height:'90%'} }>
+  <Card.Title style={styles.secondtitle}>{returnCampaignDetailList.campaignName}
 </Card.Title>
   <Card.Divider/>
-  {/* <Card.Image source={require('https://e.sport.fr/wp-content/uploads/2020/08/bigs-red-bull-flick-key-visual.jpeg')}> */}
-    <Text style={{marginBottom: 10}}>
+  <Card.Image source={returnInfluenceur.uploadedDOc}/>
+    <Text style={styles.textinput}>
     {returnInfluenceur.userName}
    </Text>
-   <Text style={{marginBottom: 10}}>
+   <Text style={styles.textinput}>
     Name: {returnInfluenceur.firstName}
    </Text>
-   <Text style={{marginBottom: 10}}>
+   <Text style={styles.textinput}>
    Bio: {returnInfluenceur.bio}
    </Text>
-   <Text style={{marginBottom: 10}}>
+   <Text style={styles.textinput}>
    Status: {returnCampaignDetailList.status}
    </Text>
-   <Text style={{marginBottom: 10}}>
+   <Text style={styles.textinput}>
    Followers: {returnInfluenceur.numberFollower}
    </Text>
     
-       <Text style={{marginBottom: 10}}>
+       <Text style={styles.textinput}>
        {returnInfluenceur.description}        
    </Text>
 </Card>
@@ -170,11 +167,10 @@ function ChoiceInfluencer({takeToken, navigation}) {
     return (
         <View style={styles.regform}>
 
-        <Card>
-  <Card.Title>No request
+        <Card containerStyle={{backgroundColor: '#721B81', height:'90%'} }>
+  <Card.Title style={styles.secondtitle}>No request
 </Card.Title>
   <Card.Divider/>
-  {/* <Card.Image source={require('https://e.sport.fr/wp-content/uploads/2020/08/bigs-red-bull-flick-key-visual.jpeg')}> */}
 
 </Card>
 </View>
@@ -186,7 +182,7 @@ const styles = StyleSheet.create({
     regform: {
       alignSelf: 'stretch',
       backgroundColor: '#9C27B0',
-      height: '95%',
+      height: '130%',
   
     },
     menuh : {
@@ -206,35 +202,35 @@ const styles = StyleSheet.create({
       fontSize: 20,
       color: '#fff',
       paddingBottom: 10,
-      marginBottom: 2,
+      marginBottom: 10,
       borderBottomColor: '#199187',
       borderBottomWidth: 1,
       textAlign: "center",
-      marginTop: 10, 
+      marginTop: 20, 
       
     },
     textinput: {
+      marginTop : 30,
       alignSelf: 'stretch',
-      height: 40,
-      marginBottom: 20,
       color: '#fff',
-      borderBottomColor: '#f8f8f8',
-      borderBottomWidth: 1,
-      marginLeft:10
-  
-    },
-    button: {
-      alignSelf: 'stretch',
-      alignItems: 'center',
-      padding: 20,
-      marginTop: 15,
-      color: 'black',
-      
-    },
-    btntext: {
-      color: '#fff',
-      fontWeight: 'bold',
-    }
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    margin : 30  ,
+    marginBottom : 60
+
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    
+    
+
+
+  }
+ 
   });
   
     

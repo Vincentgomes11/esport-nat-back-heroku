@@ -74,7 +74,7 @@ function MyRequests({ takeToken, navigation }) {
             <Card containerStyle={{backgroundColor: '#721B81', height:'40'} }>
             <Card.Title style={styles.secondtitle}>Campaigns Section
           </Card.Title>
-              <Text style={{marginBottom: 10}}> No Request</Text>
+              <Text style={styles.textinput}> No Request</Text>
               
           </Card>
           <Button title="Profile"/>
