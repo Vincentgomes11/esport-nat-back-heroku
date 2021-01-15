@@ -12,6 +12,8 @@ function MyCampaignsListComponent(props) {
 <Card containerStyle={{backgroundColor: '#721B81'} }>
   <Card.Title style={styles.secondtitle}>{props.campaignName}
 </Card.Title>
+<Card.Image source={{uri: props.campaignImage}}></Card.Image>      
+
     <Text style={styles.textinput}>
     Status: {props.campaignStatus}
     </Text>

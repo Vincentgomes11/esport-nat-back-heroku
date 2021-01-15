@@ -44,21 +44,23 @@ function CampaignDetail({takeToken, navigation}) {
     }
     return (
         <Provider>
-        <Menu    
+          <View>
+        <Menu     
              visible={visible}
              onDismiss={closeMenu}
-             anchor={<Button  style={styles.menuh} onPress={openMenu} title="Menu">Menu</Button>}>
+             anchor={<Button onPress={openMenu}  title="Menu">Menu</Button>}>
              <Menu.Item onPress={() => navigation.navigate('MyRequests')} title="My Requests" />
              <Menu.Item onPress={() => navigation.navigate('ProfileInfluencer')} title="Profile" />
              <Divider />
              <Menu.Item onPress={() => navigation.navigate('HomeScreen')} title="Home" />
            </Menu>
+           </View>
         <View style={styles.regform}>
 <Card containerStyle={{backgroundColor: '#721B81', height:'90%'} }>
   <Card.Title style={styles.secondtitle}>{campaignDetails.campaignName}
 </Card.Title>
   <Card.Divider/>
-  <Card.Image source={campaignDetails.campaignImg}></Card.Image>
+  <Card.Image source={{uri:campaignDetails.uploadedDoc}}></Card.Image>
     <Text style={styles.textinput}>
     {campaignDetails.description}
    </Text>
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
       height: '95%',
 
     },
-   
+ 
     secondtitle: {
       fontSize: 20,
       color: '#fff',

@@ -12,6 +12,8 @@ function MyRequestList(props) {
 <Card containerStyle={{backgroundColor: '#721B81'} }>
   <Card.Title style={styles.secondtitle}>{props.campaignName}
 </Card.Title>
+<Card.Image source={{uri:props.campaignUpload}}></Card.Image>
+
     <Text style={styles.textinput}>
     Status: {props.campaignStatus}
     </Text>

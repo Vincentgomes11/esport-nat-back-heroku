@@ -80,7 +80,7 @@ function ChoiceInfluencer({takeToken, navigation}) {
   <Card.Title style={styles.secondtitle}>{returnCampaignDetailList.campaignName}
 </Card.Title>
   <Card.Divider/>
-  <Card.Image source={returnInfluenceur.uploadedDOc}/>
+  <Card.Image source={{uri: returnInfluenceur.uploadedDOc}}></Card.Image>      
     <Text style={styles.textinput}>
     {returnInfluenceur.userName}
    </Text>
@@ -136,7 +136,7 @@ function ChoiceInfluencer({takeToken, navigation}) {
   <Card.Title style={styles.secondtitle}>{returnCampaignDetailList.campaignName}
 </Card.Title>
   <Card.Divider/>
-  <Card.Image source={returnInfluenceur.uploadedDOc}/>
+  <Card.Image source={{uri: returnInfluenceur.uploadedDOc}}></Card.Image>      
     <Text style={styles.textinput}>
     {returnInfluenceur.userName}
    </Text>
@@ -171,6 +171,7 @@ function ChoiceInfluencer({takeToken, navigation}) {
   <Card.Title style={styles.secondtitle}>No request
 </Card.Title>
   <Card.Divider/>
+  <Card.Image source={{uri: returnInfluenceur.uploadedDOc}}></Card.Image>      
 
 </Card>
 </View>

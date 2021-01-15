@@ -14,7 +14,8 @@ function CampaignListComponent(props) {
   <Card.Title style={styles.secondtitle}
 >{props.campaignName}
 </Card.Title>
-<Card.Image source={props.campaignImg}></Card.Image>
+<Card.Image source={{uri: props.campaignUpload}}></Card.Image>      
+
   <Text style={styles.textinput}>
     {props.campaignDesc}
     </Text>
